@@ -1,49 +1,19 @@
-# Istanbul Airbnb Listings Analysis
+# Istanbul Airbnb Analysis
 
-## Project Overview
+This repository is for my DSA 210 (Introduction to Data Science) term project, Spring 2025–2026.
 
-This is a term project for **DSA 210 – Introduction to Data Science** (Spring 2025–2026). The goal is to analyze Istanbul Airbnb listings to understand which features most strongly influence listing price and demand. By examining publicly available data from Inside Airbnb and enriching it with additional contextual information, this project aims to uncover actionable patterns in Istanbul's short-term rental market.
+## What This Project Is About
 
-## Research Question
+I plan to work with Istanbul Airbnb data and look at how listing features like location, property type, and reviews may relate to price and availability. The details will become clearer as I go through the project.
 
-**Which listing features — such as location, property type, host characteristics, and review patterns — are the strongest predictors of price and occupancy for Airbnb rentals in Istanbul?**
+## Data
 
-## Data Source
+I plan to use publicly available data from [Inside Airbnb](http://insideairbnb.com/get-the-data/) for Istanbul. I may also bring in additional data to enrich the analysis, but I haven't decided on the specifics yet.
 
-- **Primary dataset:** [Inside Airbnb – Istanbul](http://insideairbnb.com/get-the-data/) — publicly available listing, review, and calendar data.
-- **Enrichment (planned):** Additional contextual data such as neighborhood-level attributes or tourism indicators to complement the primary dataset.
+## What I Want to Examine
 
-## Motivation
+I'm interested in exploring which features of a listing seem to matter for pricing. This could include things like neighborhood, room type, number of reviews, or host information. I'll define this more clearly in the proposal stage.
 
-Istanbul is one of the most visited cities in the world, with a rapidly growing short-term rental market. Understanding the factors that drive pricing and demand can provide insights for hosts, travelers, and urban policymakers alike. This project applies data science methods to a tangible, local problem using real-world data.
+## Project Status
 
-## Project Roadmap
-
-| Milestone | Deadline | Status |
-|-----------|----------|--------|
-| Repository creation | March 17 | ✅ Complete |
-| Project proposal | March 31 | Upcoming |
-| Data collection, EDA & hypothesis testing | April 14 | Upcoming |
-| Machine learning methods | May 5 | Upcoming |
-| Final report & code submission | May 18 | Upcoming |
-
-## Reproducibility
-
-This repository will be expanded incrementally throughout the semester. Each milestone will add new data, analysis, and documentation. To reproduce the analysis at any stage:
-
-1. Clone this repository.
-2. Create a virtual environment: `python3 -m venv venv`
-3. Install dependencies: `pip install -r requirements.txt`
-4. Follow instructions in the relevant notebook(s) under `notebooks/`.
-
-## Repository Structure
-
-```
-├── data/              # Datasets (raw data not committed; see data/README.md)
-├── notebooks/         # Jupyter notebooks for analysis
-├── src/               # Python source code and utilities
-├── reports/           # Written reports and deliverables
-├── figures/           # Generated plots and visualizations
-├── requirements.txt   # Python dependencies
-└── README.md          # This file
-```
+This repository is at the initial setup stage. I will be adding data, analysis, and documentation over the coming weeks as the project progresses.
