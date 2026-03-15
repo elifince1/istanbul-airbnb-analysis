@@ -1,0 +1,58 @@
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+
+# Data (large files excluded by default)
+*.csv
+*.xlsx
+*.json
+*.parquet
+*.pkl
+*.h5
+
+# Compiled files
+*.pyc
+
+# Distribution
+*.tar.gz
+*.whl
+
+# Logs
+*.log
+
+# Local workspace files (not part of the project)
+DSA210_Spring2026_ProjectGuidelines.docx
+docs/
+resources/
+.gemini/
+.agents/
