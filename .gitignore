@@ -50,9 +50,4 @@ Thumbs.db
 # Logs
 *.log
 
-# Local workspace files (not part of the project)
-DSA210_Spring2026_ProjectGuidelines.docx
-docs/
-resources/
-.gemini/
-.agents/
+
