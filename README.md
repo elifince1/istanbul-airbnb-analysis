@@ -18,4 +18,6 @@ I'm interested in exploring which features of a listing seem to matter for prici
 
 This repository is at the initial setup stage. I will be adding data, analysis, and documentation over the coming weeks as the project progresses.
 
+## AI Usage
 
+In accordance with the DSA 210 project guidelines, I explicitly declare that I used AI tools to decide on my project's main topic and to structure my GitHub repository more professionally.
