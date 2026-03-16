@@ -8,7 +8,7 @@ I plan to work with Istanbul Airbnb data and look at how listing features like l
 
 ## Data
 
-I plan to use publicly available data from [Inside Airbnb](http://insideairbnb.com/get-the-data/) for Istanbul. I may also bring in additional data to enrich the analysis, but I haven't decided on the specifics yet.
+I plan to use publicly available data from [Inside Airbnb](http://insideairbnb.com/get-the-data/) for Istanbul. I will enrich this dataset with external sources such as economic indicators or transportation networks, which will be detailed in the proposal.
 
 ## What I Want to Examine
 
@@ -17,3 +17,7 @@ I'm interested in exploring which features of a listing seem to matter for prici
 ## Project Status
 
 This repository is at the initial setup stage. I will be adding data, analysis, and documentation over the coming weeks as the project progresses.
+
+## AI Usage / Acknowledgements
+
+In accordance with the DSA 210 project guidelines, I explicitly declare that I used AI tools to decide on my project's main topic and prepare my GitHub repository more professionally.
