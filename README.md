@@ -21,7 +21,7 @@ The primary data comes from [Inside Airbnb](http://insideairbnb.com/get-the-data
 ## Project Status
 
 - ✅ Repository setup (March 17)
-- ✅ Project proposal (March 31) — see [reports/proposal.md](reports/proposal.md)
+- ✅ Project proposal (March 31)
 - ⬜ Data collection, EDA, and hypothesis tests (April 14)
 - ⬜ Machine learning methods (May 5)
 - ⬜ Final report and code submission (May 18)
