@@ -59,13 +59,6 @@ The EDA confirmed several strong patterns in the Istanbul Airbnb market:
 - Review score rating has only a weak positive association with price.
 - Availability patterns differ across room types, with hotel rooms and private rooms showing very high annual availability.
 
-Selected visuals:
-
-![Price Distribution](../figures/01_price_distribution.png)
-
-![Price by Room Type](../figures/06_price_by_room_type.png)
-
-![Correlation Heatmap](../figures/10_correlation_heatmap.png)
 
 ## Hypothesis Tests
 
