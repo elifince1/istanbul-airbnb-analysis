@@ -23,32 +23,6 @@ The project uses the [Inside Airbnb](http://insideairbnb.com/get-the-data/) Ista
 
 The analysis dataset is built at the listing level by combining cleaned listing information with calendar- and review-derived aggregates. The neighbourhood reference file was also audited during preprocessing; however, the listing file already contains the neighbourhood labels used in the final analysis dataset.
 
-## Phase 3 Outputs
-
-The April 14 milestone is completed in this repository through the following files:
-
-- [src/download_data.py](src/download_data.py): downloads the raw Istanbul Inside Airbnb files
-- [src/preprocess.py](src/preprocess.py): cleans, filters, and merges the data into a listing-level dataset
-- [src/create_notebook.py](src/create_notebook.py): generates the analysis notebook
-- [notebooks/02_eda_hypothesis_tests.ipynb](notebooks/02_eda_hypothesis_tests.ipynb): full EDA and hypothesis testing notebook
-- [reports/phase3_eda_hypothesis_tests.md](reports/phase3_eda_hypothesis_tests.md): written Phase 3 milestone summary
-- [figures/](figures): exported visualizations from the notebook
-
-## Key Findings So Far
-
-- The final analysis dataset contains **25,206 listings** and **81 features** after cleaning.
-- Listing price is strongly right-skewed. The **median price is 2,535 TRY** and the **mean price is 3,691 TRY**.
-- **Entire home/apt** listings make up about **71.6%** of the dataset and have the highest median price (**2,921 TRY**).
-- **Superhost** listings have a higher median price (**3,380 TRY**) than non-superhost listings (**2,355 TRY**).
-- Review score rating is positively associated with price, but the relationship is **weak** (`Spearman rho = 0.148`).
-- Price differs significantly across both **room types** and **major neighbourhood groups**.
-- Room type and availability level are significantly associated, but the effect size is **small**.
-
-## Selected Visuals
-
-![Price Distribution](figures/01_price_distribution.png)
-
-![Price by Room Type](figures/06_price_by_room_type.png)
 
 ## Project Status
 
