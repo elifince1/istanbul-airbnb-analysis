@@ -90,6 +90,3 @@ The hypothesis tests support the main direction of the project:
 - Calendar price information in this snapshot was not useful enough to contribute a strong new pricing feature.
 - The processed dataset intentionally excludes extreme price outliers above 100,000 TRY to keep the analysis interpretable.
 
-## Next Step
-
-The next milestone of the project will use this cleaned and analyzed dataset for machine learning models that predict listing price and compare interpretable baselines with stronger tree-based models.
