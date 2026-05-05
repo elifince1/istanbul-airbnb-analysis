@@ -31,6 +31,18 @@ After preprocessing:
 - listings with missing or invalid prices were removed,
 - extreme prices above **100,000 TRY** were excluded.
 
+### Missing Data Handling
+
+Since the dataset combines listing, calendar, and review information, missingness was handled differently depending on the role of each variable rather than with a single blanket rule.
+
+- **Target variable (`price`)**: listings with missing or non-positive prices were removed because price is the main analysis variable and those rows cannot support the later analysis stages.
+- **Very sparse columns**: columns with more than **80% missing values** were dropped entirely. This removed a small set of variables that were too incomplete to interpret reliably.
+- **Partially missing numeric and review-related variables**: these were kept in the dataset when the missingness was still moderate, because dropping all such rows would have removed too many listings and reduced coverage unnecessarily.
+- **Review-derived variables**: listings with no review history naturally remain missing on review-score and review-frequency fields. These were left as missing values rather than filled with artificial values, since “no reviews yet” is substantively different from a true zero rating.
+- **Calendar-derived variables**: the calendar price field was too incomplete in this snapshot to be useful as a strong feature, so the calendar stage was used mainly for listing-level aggregation rather than aggressive imputation.
+
+This approach kept the cleaning methodology transparent: drop rows only when the missingness breaks the main analysis target, drop columns only when they are overwhelmingly incomplete, and otherwise preserve the observed data structure for EDA and hypothesis testing.
+
 ## Dataset Snapshot
 
 Key summary statistics:
@@ -59,6 +71,13 @@ The EDA confirmed several strong patterns in the Istanbul Airbnb market:
 - Review score rating has only a weak positive association with price.
 - Availability patterns differ across room types, with hotel rooms and private rooms showing very high annual availability.
 
+Selected visuals:
+
+![Price Distribution](../figures/01_price_distribution.png)
+
+![Price by Room Type](../figures/06_price_by_room_type.png)
+
+![Correlation Heatmap](../figures/10_correlation_heatmap.png)
 
 ## Hypothesis Tests
 
@@ -86,7 +105,11 @@ The hypothesis tests support the main direction of the project:
 
 - The analysis is observational and supports **associational**, not causal, conclusions.
 - The data represent a single Inside Airbnb snapshot, so the findings may change over time.
-- Some potentially useful variables have substantial missingness.
+- Some potentially useful variables still have substantial missingness even after dropping the sparsest columns, especially review-related variables for listings with little or no review history.
 - Calendar price information in this snapshot was not useful enough to contribute a strong new pricing feature.
 - The processed dataset intentionally excludes extreme price outliers above 100,000 TRY to keep the analysis interpretable.
+
+## Next Step
+
+The next milestone of the project will use this cleaned and analyzed dataset for machine learning models that predict listing price and compare interpretable baselines with stronger tree-based models.
 
