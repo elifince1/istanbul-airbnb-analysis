@@ -40,7 +40,11 @@ Both raw and processed CSV files are excluded from version control by default. T
 5. **Calendar aggregation** — Aggregated daily calendar data to listing level (note: calendar prices were empty in this snapshot)
 6. **Review aggregation** — Computed `review_count_computed`, `first_review_computed`, `last_review_computed`, `review_span_days`, `reviews_per_month_computed` from individual review records
 7. **Neighbourhood audit** — Downloaded `neighbourhoods.csv` as a reference file and confirmed that the cleaned listing file already contains the neighbourhood labels used in the final analysis
-8. **Missing values** — Dropped columns with >80% missing values (4 columns removed)
+8. **Missing values** — Applied a selective missing-data strategy:
+   - dropped columns with >80% missing values (4 columns removed),
+   - removed rows only when `price` was missing or non-positive,
+   - kept moderate missingness in other fields so the dataset would not lose too many listings,
+   - and left review-related missing values as missing when a listing had no review history
 9. **Price filtering** — Removed listings with missing, zero, or extremely high (>100K TRY) prices
 10. **Merge** — Joined listings, calendar aggregates, and review aggregates on listing ID
 
@@ -78,3 +82,4 @@ Both raw and processed CSV files are excluded from version control by default. T
 - Raw and processed data files are **not committed** to this repository by default (excluded via `.gitignore`).
 - Run `python src/download_data.py` to obtain the raw files (~106 MB total download).
 - Run `python src/preprocess.py` to recreate the processed listing-level dataset.
+- Missing data were **not globally imputed** during preprocessing. Instead, the pipeline dropped only the sparsest columns and rows with unusable target values, while preserving meaningful missingness in review-related fields.
