@@ -23,6 +23,7 @@ build/
 *.swp
 *.swo
 *~
+.worktrees/
 
 # OS metadata
 .DS_Store
@@ -34,11 +35,14 @@ Thumbs.db
 
 # Data (large files excluded by default)
 *.csv
+*.csv.gz
 *.xlsx
 *.json
 *.parquet
 *.pkl
 *.h5
+data/raw/
+data/processed/
 
 # Compiled files
 *.pyc
@@ -50,4 +54,9 @@ Thumbs.db
 # Logs
 *.log
 
+# Local-only course materials
+lecture notes/
+resources/
+DSA210_Spring2026_ProjectGuidelines.docx
+~$DSA210_Spring2026_ProjectGuidelines.docx
 
