@@ -180,7 +180,7 @@ jupyter nbconvert --to notebook --execute notebooks/03_modeling.ipynb --inplace
 
 ## AI Usage Disclosure
 
-AI tools were used to support project planning, repository organization, code review, documentation drafting, and final editing. The use of AI is documented separately in `AI_USAGE.md`. Final project decisions, result interpretation, and submission responsibility remain mine.
+AI tools were used to support project planning, repository organization, code review, documentation drafting, and final editing. Final project decisions, result interpretation, and submission responsibility remain mine.
 
 ## References
 
