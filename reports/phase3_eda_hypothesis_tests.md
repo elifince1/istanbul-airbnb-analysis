@@ -71,13 +71,27 @@ The EDA confirmed several strong patterns in the Istanbul Airbnb market:
 - Review score rating has only a weak positive association with price.
 - Availability patterns differ across room types, with hotel rooms and private rooms showing very high annual availability.
 
-Selected visuals:
+### Visual Evidence From EDA
 
 ![Price Distribution](../figures/01_price_distribution.png)
 
+The price distribution is heavily right-skewed, which is why the later hypothesis tests rely mostly on non-parametric methods and why the modeling stage uses a log-transformed target.
+
+![Room Type Distribution](../figures/02_room_type_distribution.png)
+
+Entire home/apt listings dominate the Istanbul Airbnb market in this snapshot, so room type is an important grouping variable for both EDA and hypothesis testing.
+
 ![Price by Room Type](../figures/06_price_by_room_type.png)
 
+The room-type comparison shows a clear price gap: entire home/apt listings have much higher median prices than private rooms and shared rooms.
+
+![Top Neighbourhoods](../figures/03_top_neighbourhoods.png)
+
+Listings are concentrated in a small number of central neighbourhoods, especially Beyoglu, Fatih, and Sisli.
+
 ![Correlation Heatmap](../figures/10_correlation_heatmap.png)
+
+The correlation heatmap shows that structural capacity variables such as `accommodates`, `bedrooms`, `beds`, and `bathrooms` are more strongly related to price than review-score variables.
 
 ## Hypothesis Tests
 
@@ -90,6 +104,20 @@ All tests were selected to stay aligned with the statistical methods covered in 
 | 3 | Is listing price associated with review score rating? | Spearman correlation | `rho = 0.148`, `p < 0.001` | There is a statistically significant but weak positive association between review score rating and price. |
 | 4 | Is availability level associated with room type? | Chi-square test of independence | `chi^2 = 190.16`, `p < 0.001`, `Cramer's V = 0.061` | Room type and availability level are associated, but the effect size is small. |
 | 5 | Do prices differ across major Istanbul neighbourhoods? | Kruskal-Wallis | `H = 625.57`, `p < 0.001`, `eta^2 = 0.030` | Prices differ significantly across major neighbourhood groups. |
+
+### Visual Support For Hypothesis Tests
+
+![Price by Superhost Status](../figures/07_price_by_superhost.png)
+
+Superhost listings have a visibly higher median price than non-superhost listings, matching the significant Mann-Whitney U test result.
+
+![Price vs Review Score Rating](../figures/09_price_vs_rating.png)
+
+The review-score relationship is positive but weak, which is consistent with the small Spearman correlation.
+
+![Availability by Room Type](../figures/12_availability_by_room_type.png)
+
+Availability patterns differ by room type, although the effect size remains small.
 
 ## Interpretation of Findings
 
@@ -112,4 +140,3 @@ The hypothesis tests support the main direction of the project:
 ## Next Step
 
 The next milestone of the project will use this cleaned and analyzed dataset for machine learning models that predict listing price and compare interpretable baselines with stronger tree-based models.
-
