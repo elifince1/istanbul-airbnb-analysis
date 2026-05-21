@@ -76,6 +76,12 @@ All final metrics below are reported on the original **TRY** price scale.
 | Ridge Regression | 5,696.35 | 1,592.39 | 4,152.75 | 0.196 |
 | Decision Tree | 4,392.99 | 1,587.21 | 4,254.12 | 0.156 |
 
+### Model Comparison Visual
+
+![Model Comparison](../figures/15_model_comparison.png)
+
+The visual comparison makes the same pattern clear as the table: Random Forest has the lowest test RMSE, while kNN is close behind and the Ridge baseline is weaker.
+
 ## Main Findings
 
 - The **Random Forest** model performed best on the held-out test set.
@@ -98,6 +104,20 @@ The Random Forest feature-importance ranking suggests that the strongest predict
 These are broadly consistent with the earlier EDA findings: listing size, property form, and location are among the most important drivers associated with price.
 
 The Ridge baseline also highlighted several strong coefficients, especially certain property-type and neighbourhood indicators, but its overall predictive quality remained lower than the tree ensemble.
+
+### Best Model Diagnostics
+
+![Actual vs Predicted Prices](../figures/16_actual_vs_predicted.png)
+
+The actual-vs-predicted plot shows that the model captures the broad price pattern but still struggles with high-price listings.
+
+![Residuals for Best Model](../figures/17_residuals_best_model.png)
+
+The residual plot confirms that prediction errors are larger for some expensive listings, which is expected because Airbnb prices are highly right-skewed.
+
+![Random Forest Feature Importance](../figures/18_random_forest_feature_importance.png)
+
+The feature-importance plot supports the interpretation that listing capacity, location, property type, bathrooms, and host response rate are among the most useful predictors.
 
 ## Limitations
 
