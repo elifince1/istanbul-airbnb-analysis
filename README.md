@@ -1,3 +1,5 @@
+
+
 # Istanbul Airbnb Analysis
 
 This repository contains my DSA 210 (Introduction to Data Science) term project for Spring 2025-2026. The project studies how listing, host, and review-related features are associated with Airbnb price and availability patterns in Istanbul.
@@ -23,6 +25,8 @@ The project uses the [Inside Airbnb](http://insideairbnb.com/get-the-data/) Ista
 
 The analysis dataset is built at the listing level by combining cleaned listing information with calendar- and review-derived aggregates. The neighbourhood reference file was also audited during preprocessing; however, the listing file already contains the neighbourhood labels used in the final analysis dataset.
 
+The cleaning stage handles missing data explicitly: rows are removed when the target `price` is missing or unusable, extremely sparse columns (>80% missing) are dropped, and meaningful review-related missingness is preserved rather than globally imputed away.
+
 ## Phase 3 Outputs
 
 The April 14 milestone is completed in this repository through the following files:
@@ -41,8 +45,18 @@ The May 5 machine learning milestone is implemented through the following files:
 - [src/modeling_utils.py](src/modeling_utils.py): shared helpers for modeling data preparation and metrics
 - [src/train_price_models.py](src/train_price_models.py): trains and compares multiple regression models
 - [src/create_modeling_notebook.py](src/create_modeling_notebook.py): generates the modeling notebook
-- [notebooks/03_modeling.ipynb](notebooks/03_modeling.ipynb): machine learning notebook for price prediction
-- [reports/phase4_machine_learning.md](reports/phase4_machine_learning.md): written Phase 4 milestone summary
+- [notebooks/03_modeling.ipynb](notebooks/03_modeling.ipynb): executed machine learning notebook for price prediction, including saved outputs
+- [reports/phase4_machine_learning.md](reports/phase4_machine_learning.md): written Phase 4 milestone summary with model-comparison visuals
+
+## Final Outputs
+
+The final submission package includes:
+
+- [reports/final_report.md](reports/final_report.md): final project report combining motivation, data source, EDA, hypothesis tests, machine learning, findings, limitations, and future work
+- executed notebooks with saved outputs:
+  - [notebooks/02_eda_hypothesis_tests.ipynb](notebooks/02_eda_hypothesis_tests.ipynb)
+  - [notebooks/03_modeling.ipynb](notebooks/03_modeling.ipynb)
+- [figures/](figures): EDA, hypothesis-test, and machine-learning visualizations used in the reports
 
 ## Key Findings So Far
 
@@ -58,9 +72,21 @@ The May 5 machine learning milestone is implemented through the following files:
 
 ## Selected Visuals
 
+### Exploratory Data Analysis
+
 ![Price Distribution](figures/01_price_distribution.png)
 
 ![Price by Room Type](figures/06_price_by_room_type.png)
+
+![Correlation Heatmap](figures/10_correlation_heatmap.png)
+
+### Machine Learning
+
+![Model Comparison](figures/15_model_comparison.png)
+
+![Actual vs Predicted Prices](figures/16_actual_vs_predicted.png)
+
+![Random Forest Feature Importance](figures/18_random_forest_feature_importance.png)
 
 ## Project Status
 
@@ -68,7 +94,8 @@ The May 5 machine learning milestone is implemented through the following files:
 - ✅ Project proposal (March 31) - see [reports/proposal.md](reports/proposal.md)
 - ✅ Data collection, EDA, and hypothesis tests (April 14)
 - ✅ Machine learning methods (May 5)
-- ⬜ Final report and code submission (May 18)
+- ✅ Executed notebooks with saved outputs and visual report updates
+- ✅ Final report and code submission package (May 18)
 
 ## Repository Structure
 
@@ -84,6 +111,7 @@ The May 5 machine learning milestone is implemented through the following files:
 │   ├── proposal.md
 │   └── phase3_eda_hypothesis_tests.md
 │   └── phase4_machine_learning.md
+│   └── final_report.md
 ├── src/
 │   ├── download_data.py
 │   ├── preprocess.py
@@ -91,6 +119,7 @@ The May 5 machine learning milestone is implemented through the following files:
 │   ├── modeling_utils.py
 │   ├── train_price_models.py
 │   └── create_modeling_notebook.py
+├── AI_USAGE.md
 ├── README.md
 └── requirements.txt
 ```
@@ -106,8 +135,8 @@ python src/preprocess.py
 python src/create_notebook.py
 python src/train_price_models.py
 python src/create_modeling_notebook.py
-jupyter notebook notebooks/02_eda_hypothesis_tests.ipynb
-jupyter notebook notebooks/03_modeling.ipynb
+jupyter nbconvert --to notebook --execute notebooks/02_eda_hypothesis_tests.ipynb --inplace
+jupyter nbconvert --to notebook --execute notebooks/03_modeling.ipynb --inplace
 ```
 
 To verify that the notebook runs end-to-end:
@@ -122,7 +151,12 @@ jupyter nbconvert --to notebook --execute notebooks/03_modeling.ipynb --output /
 - [Project proposal](reports/proposal.md)
 - [Phase 3 milestone summary](reports/phase3_eda_hypothesis_tests.md)
 - [Phase 4 machine learning summary](reports/phase4_machine_learning.md)
+- [Final project report](reports/final_report.md)
+- [AI usage disclosure](AI_USAGE.md)
 
 ## AI Usage
 
 In accordance with the DSA 210 project guidelines, I explicitly declare that I used AI tools to help refine the project topic, improve repository organization, support the data analysis workflow, and assist with drafting and polishing documentation. All final project decisions, code review, and interpretation of results were completed by me.
+
+
+
